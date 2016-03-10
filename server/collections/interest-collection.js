@@ -1,7 +1,7 @@
 'use strict';
 
 const mongoose = require('mongoose');
-const Interest = require('../models/interest');
+const Interest = require('../models/interest').Interest;
 
 class InterestCollection {
   static getInterests(cb) {
