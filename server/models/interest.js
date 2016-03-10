@@ -4,8 +4,10 @@ const Schema = mongoose.Schema;
 const InterestSchema = Schema({
   _id: Schema.Types.ObjectId,
   name: String,
-  ranking: Number,
-  availability: Boolean,
+  keywords: [{
+    userId: Schema.Types.ObjectId,
+    term: String,
+  }],
 });
 
 const Interest = mongoose.model('Interest', InterestSchema);
