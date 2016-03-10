@@ -16,7 +16,7 @@ app.get('/search', (req, res) => {
   res.send({});
 });
 
-app.get('/users/:userid', (req, res) => {
+app.get('/profile/:id', (req, res) => {
   res.send(read('./views/profile.html', 'utf8'));
 });
 
