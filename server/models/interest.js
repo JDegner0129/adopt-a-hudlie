@@ -12,7 +12,4 @@ const InterestSchema = Schema({
 
 const Interest = mongoose.model('Interest', InterestSchema);
 
-module.exports = {
-  InterestSchema: InterestSchema,
-  Interest: Interest,
-};
+module.exports = Interest;

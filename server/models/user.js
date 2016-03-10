@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const InterestSchema = require('./interest').InterestSchema;
 
 const Schema = mongoose.Schema;
 
@@ -11,7 +10,7 @@ const UserSchema = Schema({
   email: String,
   thumbnailPath: String,
   interests: [{
-    interest: InterestSchema,
+    interestId: Schema.Types.ObjectId,
     rating: Number,
     status: Number,
   }],
