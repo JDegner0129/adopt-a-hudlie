@@ -16,6 +16,10 @@ app.get('/search', (req, res) => {
   res.send({});
 });
 
+app.get('/users/:userid', (req, res) => {
+  res.send(read('./views/profile.html', 'utf8'));
+});
+
 const server = app.listen(process.env.PORT || 5000, () => {
   const host = server.address().address;
   const port = server.address().port;
