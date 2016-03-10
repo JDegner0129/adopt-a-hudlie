@@ -13,6 +13,11 @@ const UserSchema = Schema({
     interestId: Schema.Types.ObjectId,
     rating: Number,
     status: Number,
+    name: String,
+    keywords: [{
+      userId: Schema.Types.ObjectId,
+      term: String,
+    }],
   }],
 });
 
