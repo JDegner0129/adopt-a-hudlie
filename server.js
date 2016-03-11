@@ -49,23 +49,22 @@ app.post('/api/v1/users', (req, res) => {
   });
 });
 
-// TODO: implement updating users in a separate PR
-// app.post('/api/v1/users/:id', (req, res) => {
-//   const userInfo = {
-//     _id: req.body._id || req.params.id,
-//     name: req.body.name,
-//     description: req.body.description,
-//     location: req.body.location,
-//     email: req.body.email,
-//     interests: req.body.interests,
-//   };
-//
-//   UserService.updateUser(userInfo, (err, user) => {
-//     if (err) return console.error(err);
-//
-//     res.send(user);
-//   });
-// });
+app.post('/api/v1/users/:id', (req, res) => {
+  const userInfo = {
+    _id: req.body._id || req.params.id,
+    name: req.body.name,
+    description: req.body.description,
+    location: req.body.location,
+    email: req.body.email,
+    interests: req.body.interests,
+  };
+
+  UserService.updateUser(userInfo, (err, user) => {
+    if (err) return console.error(err);
+
+    res.send(user);
+  });
+});
 
 app.get('/profile/:id', (req, res) => {
   res.send(read('./views/profile.html', 'utf8'));
