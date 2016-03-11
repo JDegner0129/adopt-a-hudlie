@@ -11,6 +11,14 @@ class UserCollection {
   static getUser(query, cb) {
     User.findOne(query, cb);
   }
+
+  static createUser(userInfo, cb) {
+    User.create(userInfo, cb);
+  }
+
+  static updateUsers(query, update, cb) {
+    User.update(query, update, cb);
+  }
 }
 
 module.exports = UserCollection;
