@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import url from 'url';
-import Layout from './layout';
+import Layout from '../components/layout';
 
 function getUserID() {
   var u = url.parse(window.location.href);
@@ -9,7 +9,7 @@ function getUserID() {
   return p[2];
 }
 
-var uid = getUserID()
+var uid = getUserID();
 
 var UserProfile = React.createClass({
   getInitialState: function() {
@@ -60,7 +60,7 @@ var UserProfile = React.createClass({
 });
 
 ReactDOM.render(
-  <Layout header="Mentor profile">
+  <Layout header="Mentor">
     <UserProfile source="/api/v1/users/" />
   </Layout>, document.getElementById('profile-app')
 );

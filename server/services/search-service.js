@@ -11,7 +11,10 @@ class SearchService {
 
     // Search interests for interests that match the user's query
     InterestCollection.getInterests(interestQuery, (err, interests) => {
-      if (err) throw err;
+      if (err) {
+        callback(err);
+        return;
+      }
 
       let interestIds = interests.map(i => i._id) || [];
 
@@ -37,6 +40,11 @@ class SearchService {
       UserCollection.getUsers(userQuery, (err, users) => {
         if (err) {
           callback(err);
+          return;
+        }
+
+        if (!users || !users.length) {
+          callback(err, users);
           return;
         }
 

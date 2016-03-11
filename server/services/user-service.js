@@ -87,7 +87,10 @@ class UserService {
   }
 
   static _createAllInterests(interests, callback) {
-    if (!interests) interests = [];
+    if (!interests) {
+      interests = [];
+    }
+
     const trimmedInterests = interests.map(interest => {
       const newInterest = {
         name: interest.name,
