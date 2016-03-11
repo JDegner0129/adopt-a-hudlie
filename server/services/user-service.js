@@ -19,7 +19,7 @@ class UserService {
         InterestCollection.getInterests({ _id: { $in: interestIds } }, (err, interests) => {
           if (err) throw err;
 
-          user.interests = interests;
+          user.interests = this._toUserInterests(interests, user.interests);
           callback(err, user);
         });
       } else {
@@ -35,15 +35,7 @@ class UserService {
         return;
       }
 
-      const userInterests = interests.map((i, index) => {
-        return {
-          interestId: i._id,
-          rating: userInfo.interests[index].rating,
-          status: userInfo.interests[index].status,
-        };
-      });
-
-      userInfo.interests = userInterests;
+      userInfo.interests = this._toUserInterests(interests, userInfo.interests);
       UserCollection.createUser(userInfo, callback);
     });
   }
@@ -55,16 +47,8 @@ class UserService {
         return;
       }
 
-      const userInterests = interests.map((i, index) => {
-        return {
-          interestId: i._id,
-          rating: userInfo.interests[index].rating,
-          status: userInfo.interests[index].status,
-        };
-      });
-
       const update = {
-        interests: userInterests,
+        interests: this._toUserInterests(interests, userInfo.interests),
       };
 
       if (userInfo.name) {
@@ -81,6 +65,17 @@ class UserService {
       }
 
       UserCollection.updateUsers({ _id: userInfo._id }, update, callback);
+    });
+  }
+
+  static _toUserInterests(interests, userInterests) {
+    return interests.map((i, index) => {
+      return {
+        interestId: i._id,
+        rating: userInterests[index].rating,
+        canMentor: userInterests[index].canMentor,
+        needsMentor: userInterests[index].needsMentor,
+      };
     });
   }
 
