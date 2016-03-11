@@ -29,14 +29,22 @@ class UserService {
   }
 
   static createUser(userInfo, callback) {
-    this._createAllInterests(userInfo.interests, (err, interests) => {
-      if (err) {
-        callback(err);
+    // check if a user exists with the specified email, and if so, return that document
+    UserCollection.getUser({ email: userInfo.email }, (err, user) => {
+      if (user) {
+        callback(err, user);
         return;
       }
 
-      userInfo.interests = this._toUserInterests(interests, userInfo.interests);
-      UserCollection.createUser(userInfo, callback);
+      this._createAllInterests(userInfo.interests, (err, interests) => {
+        if (err) {
+          callback(err);
+          return;
+        }
+
+        userInfo.interests = this._toUserInterests(interests, userInfo.interests);
+        UserCollection.createUser(userInfo, callback);
+      });
     });
   }
 
