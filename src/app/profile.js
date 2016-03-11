@@ -9,7 +9,7 @@ function getUserID() {
   return p[2];
 }
 
-var uid = getUserID()
+var uid = getUserID();
 
 var UserProfile = React.createClass({
   getInitialState: function() {

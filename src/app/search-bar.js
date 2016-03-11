@@ -1,12 +1,54 @@
 import React from 'react';
 
-const SearchBar = props => {
-  return (
-    <div className="ko-field">
-      <label>Name</label>
-      <input type="text" placeholder="Interests..." />
-    </div>
-  );
-};
+export default class SearchBar extends React.Component {
 
-export default SearchBar;
+  constructor() {
+    super();
+
+    this.handleChange = this.handleChange.bind(this);
+    this.search = this.search.bind(this);
+    this.onKeyPress = this.onKeyPress.bind(this);
+
+    this.state = {
+      query: '',
+    };
+  }
+
+  search() {
+    $.ajax({
+      url: '/api/v1/search?q=' + this.state.query,
+      dataType: 'json',
+      cache: false,
+      success: function(data) {
+        console.log(data);
+      }.bind(this)
+    });
+  }
+
+  handleChange(event) {
+    this.setState({
+      query: event.target.value,
+    });
+  }
+
+  onKeyPress(e) {
+    if(e.key === 'Enter') {
+      this.search();
+    }
+  }
+
+  render() {
+    return (
+      <div className="ko-field">
+        <label>Search for Interests</label>
+        <input
+          type="text"
+          placeholder="Interests..."
+          value={this.state.query}
+          onChange={this.handleChange}
+          onKeyDown={this.onKeyPress}
+        />
+      </div>
+    )
+  };
+};
