@@ -1,4 +1,5 @@
 import React from 'react';
+import { setState } from './state';
 
 export default class SearchBar extends React.Component {
 
@@ -20,7 +21,7 @@ export default class SearchBar extends React.Component {
       dataType: 'json',
       cache: false,
       success: function(data) {
-        console.log(data);
+        setState('users', data);
       }.bind(this)
     });
   }
