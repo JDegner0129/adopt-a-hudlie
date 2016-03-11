@@ -26,8 +26,7 @@ var UserProfile = React.createClass({
 
   componentDidMount: function() {
     var source = this.props.source.concat(uid)
-    this.serverRequest = $.get(source, function (result) {
-      var userData = result[0];
+    this.serverRequest = $.get(source, function (user) {
       this.setState({
         name: user.name,
         email: user.email,
@@ -61,7 +60,7 @@ var UserProfile = React.createClass({
 });
 
 ReactDOM.render(
-  <Layout header="Mentor profile">
+  <Layout header="Mentor">
     <UserProfile source="/api/v1/users/" />
   </Layout>, document.getElementById('profile-app')
 );

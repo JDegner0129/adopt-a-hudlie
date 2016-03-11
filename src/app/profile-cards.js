@@ -22,7 +22,12 @@ export default class ProfileCards extends React.Component {
         {this.state.users.map((u, i) =>
           <ProfileCard
             key={i}
+            id={u._id}
             name={u.name}
+            img={u.img}
+            about={u.description}
+            location={u.location}
+            interests={u.interests}
           />
         )}
       </div>

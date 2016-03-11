@@ -5,7 +5,7 @@ import Layout from './layout';
 import ProfileCards from './profile-cards';
 
 ReactDOM.render(
-  <Layout header="Search for mentor">
+  <Layout header="Search for mentors">
     <SearchBar />
     <ProfileCards />
   </Layout>,

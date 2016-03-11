@@ -21,6 +21,9 @@ export default class SearchBar extends React.Component {
       dataType: 'json',
       cache: false,
       success: function(data) {
+        data.forEach((u) => {
+          u.img = u.name.toLowerCase().replace(' ', '-');
+        });
         setState('users', data);
       }.bind(this)
     });
@@ -41,10 +44,10 @@ export default class SearchBar extends React.Component {
   render() {
     return (
       <div className="ko-field">
-        <label>Search for Interests</label>
+        <label>Interest, person or location...</label>
         <input
           type="text"
-          placeholder="Interests..."
+          placeholder="Interest, person or location..."
           value={this.state.query}
           onChange={this.handleChange}
           onKeyDown={this.onKeyPress}
