@@ -15,7 +15,6 @@ class UserLogin extends React.Component {
     this.setState({
       email: e.target.value
     });
-    console.log(e.target.value)
   }
   render() {
     return (
