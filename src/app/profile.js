@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import url from 'url';
+import Layout from './layout';
 
 function getUserID() {
   var u = url.parse(window.location.href);
@@ -59,5 +60,7 @@ var UserProfile = React.createClass({
 });
 
 ReactDOM.render(
-  <UserProfile source="api/v1/users/{uid}" />, document.getElementById('profile-app')
+  <Layout>
+    <UserProfile source="api/v1/users/{uid}" />  
+  </Layout>, document.getElementById('profile-app') 
 );

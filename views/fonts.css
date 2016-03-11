@@ -1,0 +1,61 @@
+
+@font-face {
+  font-family: trade;
+  font-weight: normal;
+  font-style: normal;
+  src: url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/regular/regular.eot");
+  src: url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/regular/regular.eot?#iefix") format("embedded-opentype"), url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/regular/regular.woff") format("woff"), url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/regular/regular.ttf") format("truetype"), url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/regular/regular.svg#trade") format("svg"); }
+@font-face {
+  font-family: trade;
+  font-weight: normal;
+  font-style: italic;
+  src: url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/regular-oblique/regular-oblique.eot");
+  src: url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/regular-oblique/regular-oblique.eot?#iefix") format("embedded-opentype"), url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/regular-oblique/regular-oblique.woff") format("woff"), url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/regular-oblique/regular-oblique.ttf") format("truetype"), url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/regular-oblique/regular-oblique.svg#trade") format("svg"); }
+@font-face {
+  font-family: trade;
+  font-weight: bold;
+  font-style: normal;
+  src: url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/bold-one/bold.eot");
+  src: url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/bold-one/bold.eot?#iefix") format("embedded-opentype"), url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/bold-one/bold.woff") format("woff"), url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/bold-one/bold.ttf") format("truetype"), url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/bold-one/bold.svg#trade") format("svg"); }
+@font-face {
+  font-family: trade;
+  font-weight: bold;
+  font-style: italic;
+  src: url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/bold-oblique/bold-oblique.eot");
+  src: url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/bold-oblique/bold-oblique.eot?#iefix") format("embedded-opentype"), url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/bold-oblique/bold-oblique.woff") format("woff"), url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/bold-oblique/bold-oblique.ttf") format("truetype"), url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/bold-oblique/bold-oblique.svg#trade") format("svg"); }
+@font-face {
+  font-family: trade-condensed;
+  font-weight: normal;
+  font-style: normal;
+  src: url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/condensed/condensed.eot");
+  src: url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/condensed/condensed.eot?#iefix") format("embedded-opentype"), url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/condensed/condensed.woff") format("woff"), url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/condensed/condensed.ttf") format("truetype"), url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/condensed/condensed.svg#trade-condensed") format("svg"); }
+@font-face {
+  font-family: trade-condensed;
+  font-weight: normal;
+  font-style: oblique;
+  src: url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/condensed-oblique/condensed-oblique.eot");
+  src: url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/condensed-oblique/condensed-oblique.eot?#iefix") format("embedded-opentype"), url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/condensed-oblique/condensed-oblique.woff") format("woff"), url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/condensed-oblique/condensed-oblique.ttf") format("truetype"), url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/condensed-oblique/condensed-oblique.svg#trade-condensed") format("svg"); }
+@font-face {
+  font-family: trade-condensed;
+  font-weight: bold;
+  font-style: normal;
+  src: url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/condensed-bold/condensed-bold.eot");
+  src: url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/condensed-bold/condensed-bold.eot?#iefix") format("embedded-opentype"), url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/condensed-bold/condensed-bold.woff") format("woff"), url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/condensed-bold/condensed-bold.ttf") format("truetype"), url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/condensed-bold/condensed-bold.svg#trade-condensed") format("svg"); }
+@font-face {
+  font-family: trade-condensed;
+  font-weight: bold;
+  font-style: oblique;
+  src: url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/condensed-bold-oblique/condensed-bold-oblique.eot");
+  src: url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/condensed-bold-oblique/condensed-bold-oblique.eot?#iefix") format("embedded-opentype"), url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/condensed-bold-oblique/condensed-bold-oblique.woff") format("woff"), url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/condensed-bold-oblique/condensed-bold-oblique.ttf") format("truetype"), url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/condensed-bold-oblique/condensed-bold-oblique.svg#trade-condensed") format("svg"); }
+@font-face {
+  font-family: trade-heavy;
+  font-weight: bold;
+  font-style: normal;
+  src: url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/heavy/heavy.eot");
+  src: url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/heavy/heavy.eot?#iefix") format("embedded-opentype"), url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/heavy/heavy.woff") format("woff"), url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/heavy/heavy.ttf") format("truetype"), url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/heavy/heavy.svg#trade-heavy") format("svg"); }
+@font-face {
+  font-family: trade-heavy-condensed;
+  font-weight: bold;
+  font-style: normal;
+  src: url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/condensed-heavy/condensed-heavy.eot");
+  src: url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/condensed-heavy/condensed-heavy.eot?#iefix") format("embedded-opentype"), url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/condensed-heavy/condensed-heavy.woff") format("woff"), url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/condensed-heavy/condensed-heavy.ttf") format("truetype"), url("//d3hhcdv9i08ck8.cloudfront.net/trade-gothic/condensed-heavy/condensed-heavy.svg#trade-heavy-condensed") format("svg"); }
