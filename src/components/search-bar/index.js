@@ -61,6 +61,7 @@ export default class SearchBar extends Component {
           img={u.img}
           about={u.description}
           location={u.location}
+          email={u.email}
           interests={u.interests}
         />);
       }
