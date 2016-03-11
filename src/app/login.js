@@ -3,27 +3,38 @@ import ReactDOM from 'react-dom';
 import Layout from './layout';
 
 class UserLogin extends React.Component {
-  getInitialState() {
-    return {
+  constructor() {
+    super()
+    this.state = {
       userid: '',
       email: ''
     };
+    this.handleEmailChange = this.handleEmailChange.bind(this);
+  }
+  handleEmailChange(e) {
+    this.setState({
+      email: e.target.value
+    });
+    console.log(e.target.value)
   }
   render() {
     return (
-      <div class="ko-field-wrapper">
+      <div className="ko-field-wrapper">
         <div className="ko-field">
           <label>Enter Email to Login:</label>
-          <input type="text" placeholder="foo@bar.baz" />
+          <input
+            type="text"
+            placeholder="foo@bar.baz"
+            onChange={this.handleEmailChange}/>
         </div>
-        <ul class="ko-checkboxes">
+        <ul className="ko-checkboxes">
           <li>
-            <span class="ko-choice-mark"></span>
-            <span class="ko-choice-label">Remember me</span>
+            <span className="ko-choice-mark"></span>
+            <span className="ko-choice-label">Remember me</span>
           </li>
         </ul>
-        <div class="ko-form-actions">
-          <button class="btn-primary">Submit</button>
+        <div className="ko-form-actions">
+          <button className="btn-primary">Submit</button>
         </div>
       </div>
     );
