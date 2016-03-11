@@ -7,12 +7,7 @@ const UserCollection = collections.UserCollection;
 
 class SearchService {
   static search(query, callback) {
-    const interestQuery = {
-      $or: [
-        { name: { $regex: query, $options: 'i' } },
-        { 'keywords.term': { $regex: query, $options: 'i' } },
-      ],
-    };
+    const interestQuery = { name: { $regex: query, $options: 'i' } };
 
     // Search interests for interests that match the user's query
     InterestCollection.getInterests(interestQuery, (err, interests) => {
@@ -39,7 +34,40 @@ class SearchService {
       // 1. Interest rating
       // 2. Number of keywords matched per user
       // 3. Availability
-      UserCollection.getUsers(userQuery, callback);
+      UserCollection.getUsers(userQuery, (err, users) => {
+        if (err) {
+          callback(err);
+          return;
+        }
+
+        for (var j = 0; j < users.length; j++) {
+          const user = users[j];
+
+          // if a user result has interests, populate fields from that
+          // TODO: consider using Mongoose's population for this logic
+          if (user.interests) {
+            const userInterestIds = user.interests.map(i => i.interestId);
+            const k = j; // need to store j's present value for callback func
+
+            InterestCollection.getInterests({ _id: { $in: userInterestIds } }, (err, interests) => {
+              if (err) {
+                callback(err);
+                return;
+              }
+
+              user.interests.forEach(interest => {
+                interest.name = interests.find(i => i._id.equals(interest.interestId)).name;
+              });
+
+              if (k === users.length - 1) {
+                callback(err, users);
+              }
+            });
+          } else if (j === users.length - 1) {
+            callback(err, users);
+          }
+        }
+      });
     });
   }
 }

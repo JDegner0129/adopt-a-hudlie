@@ -19,7 +19,7 @@ class UserService {
         InterestCollection.getInterests({ _id: { $in: interestIds } }, (err, interests) => {
           if (err) throw err;
 
-          user.interests = interests;
+          user.interests = this._toUserInterests(interests, user.interests);
           callback(err, user);
         });
       } else {
@@ -29,22 +29,22 @@ class UserService {
   }
 
   static createUser(userInfo, callback) {
-    this._createAllInterests(userInfo.interests, (err, interests) => {
-      if (err) {
-        callback(err);
+    // check if a user exists with the specified email, and if so, return that document
+    UserCollection.getUser({ email: userInfo.email }, (err, user) => {
+      if (user) {
+        callback(err, user);
         return;
       }
 
-      const userInterests = interests.map((i, index) => {
-        return {
-          interestId: i._id,
-          rating: userInfo.interests[index].rating,
-          status: userInfo.interests[index].status,
-        };
-      });
+      this._createAllInterests(userInfo.interests, (err, interests) => {
+        if (err) {
+          callback(err);
+          return;
+        }
 
-      userInfo.interests = userInterests;
-      UserCollection.createUser(userInfo, callback);
+        userInfo.interests = this._toUserInterests(interests, userInfo.interests);
+        UserCollection.createUser(userInfo, callback);
+      });
     });
   }
 
@@ -55,16 +55,8 @@ class UserService {
         return;
       }
 
-      const userInterests = interests.map((i, index) => {
-        return {
-          interestId: i._id,
-          rating: userInfo.interests[index].rating,
-          status: userInfo.interests[index].status,
-        };
-      });
-
       const update = {
-        interests: userInterests,
+        interests: this._toUserInterests(interests, userInfo.interests),
       };
 
       if (userInfo.name) {
@@ -81,6 +73,17 @@ class UserService {
       }
 
       UserCollection.updateUsers({ _id: userInfo._id }, update, callback);
+    });
+  }
+
+  static _toUserInterests(interests, userInterests) {
+    return interests.map((i, index) => {
+      return {
+        interestId: i._id,
+        rating: userInterests[index].rating,
+        canMentor: userInterests[index].canMentor,
+        needsMentor: userInterests[index].needsMentor,
+      };
     });
   }
 
