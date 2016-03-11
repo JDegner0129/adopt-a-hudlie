@@ -60,7 +60,7 @@ var UserProfile = React.createClass({
 });
 
 ReactDOM.render(
-  <Layout>
-    <UserProfile source="api/v1/users/{uid}" />  
-  </Layout>, document.getElementById('profile-app') 
+  <Layout header="Mentor profile">
+    <UserProfile source="api/v1/users/{uid}" />
+  </Layout>, document.getElementById('profile-app')
 );
