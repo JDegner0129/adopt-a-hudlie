@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Layout from './layout';
+import Layout from '../components/layout';
 
 class UserLogin extends React.Component {
   constructor() {
@@ -10,14 +10,20 @@ class UserLogin extends React.Component {
       email: ''
     };
     this.handleEmailChange = this.handleEmailChange.bind(this);
+    this.handleFormSubmit = this.handleFormSubmit.bind(this);
   }
   handleEmailChange(e) {
     this.setState({
       email: e.target.value
     });
   }
+  handleFormSubmit(e) {
+    e.preventDefault();
+    // TODO
+  }
   render() {
     return (
+      <form className="" onSubmit={this.handleFormSubmit}>
       <div className="ko-field-wrapper">
         <div className="ko-field">
           <label>Enter Email to Login:</label>
@@ -36,6 +42,7 @@ class UserLogin extends React.Component {
           <button className="btn-primary">Submit</button>
         </div>
       </div>
+      </form>
     );
   }
 };
