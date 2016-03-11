@@ -1,9 +1,12 @@
 module.exports = [{
   context: __dirname,
-  entry: './src/app/home.js',
+  entry: {
+    home: './src/app/home.js',
+    profile: './src/app/profile.js'
+  },
   output: {
     path: __dirname + '/dist',
-    filename: 'home.js',
+    filename: '[name]-entry.js',
   },
   module: {
     loaders: [{
