@@ -26,7 +26,6 @@ class UserService {
   }
 
   static createUser(userInfo, callback) {
-    // TODO: handle the case in which the interests already exist
     this._createAllInterests(userInfo.interests, (err, interests) => {
       if (err) {
         callback(err);
@@ -49,6 +48,7 @@ class UserService {
   static _createAllInterests(interests, callback) {
     const trimmedInterests = interests.map(interest => {
       return {
+        _id: interest.interestId,
         name: interest.name,
       };
     });
