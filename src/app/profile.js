@@ -26,8 +26,7 @@ var UserProfile = React.createClass({
 
   componentDidMount: function() {
     var source = this.props.source.concat(uid)
-    this.serverRequest = $.get(source, function (result) {
-      var userData = result[0];
+    this.serverRequest = $.get(source, function (user) {
       this.setState({
         name: user.name,
         email: user.email,
