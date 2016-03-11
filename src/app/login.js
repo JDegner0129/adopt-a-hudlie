@@ -2,14 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Layout from './layout';
 
-var UserLogin = React.createClass({
-  getInitialState: function() {
+class UserLogin extends React.Component {
+  getInitialState() {
     return {
       userid: '',
       email: ''
     };
-  },
-  render: function() {
+  }
+  render() {
     return (
       <div class="ko-field-wrapper">
         <div className="ko-field">
@@ -28,7 +28,7 @@ var UserLogin = React.createClass({
       </div>
     );
   }
-});
+};
 
 ReactDOM.render(
   <Layout header="User login">
