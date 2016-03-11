@@ -19,7 +19,24 @@ class UserLogin extends React.Component {
   }
   handleFormSubmit(e) {
     e.preventDefault();
-    // TODO
+    var postData = {
+      email: this.state.email
+    }
+    $.ajax({
+    		  type: 'POST',
+    		  url: '/api/v1/users',
+          dataType: 'json',
+    		  data: postData,
+    		  success: this.handleSubmitSuccess,
+    		  error: this.handleSubmitFailure,
+    		});
+  }
+  handleSubmitSuccess(user) {
+    console.log(user._id)
+  }
+  handleSubmitFailure(xhr, ajaxOptions, thrownError) {
+    console.log("form submission failed: ".concat(xhr.status));
+    alert(thrownError);
   }
   render() {
     return (
