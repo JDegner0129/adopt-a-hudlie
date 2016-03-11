@@ -34,9 +34,6 @@ app.get('/api/v1/users/:id', (req, res) => {
 });
 
 app.post('/api/v1/users', (req, res) => {
-  console.log('saving user');
-  console.log(req.body);
-
   const userInfo = {
     name: req.body.name,
     description: req.body.description,
