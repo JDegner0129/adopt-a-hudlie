@@ -2,6 +2,7 @@ module.exports = [{
   context: __dirname,
   entry: {
     home: './src/app/home.js',
+    login: './src/app/login.js',
     profile: './src/app/profile.js'
   },
   output: {
