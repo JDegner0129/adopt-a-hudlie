@@ -2,8 +2,9 @@ import React from 'react';
 
 const SearchBar = props => {
   return (
-    <div>
-      <input type="text" name="tag" placeholder="Enter your interest..."/>
+    <div className="ko-field">
+      <label>Name</label>
+      <input type="text" placeholder="Interests..." />
     </div>
   );
 };
