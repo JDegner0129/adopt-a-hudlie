@@ -35,7 +35,6 @@ class UserService {
         callback(err, user);
         return;
       }
-
       this._createAllInterests(userInfo.interests, (err, interests) => {
         if (err) {
           callback(err);

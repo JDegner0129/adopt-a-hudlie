@@ -66,6 +66,10 @@ app.post('/api/v1/users/:id', (req, res) => {
   });
 });
 
+app.get('/login', (req, res) => {
+  res.send(read('./views/login.html', 'utf8'));
+});
+
 app.get('/profile/:id', (req, res) => {
   res.send(read('./views/profile.html', 'utf8'));
 });
