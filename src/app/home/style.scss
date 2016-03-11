@@ -16,24 +16,6 @@
   border-top: none;
 }
 
-.profile-card {
-  display: flex;
-  flex-direction: row;
-  align-content: space-between;
-  margin-top: 15px;
-}
-.profile-card .pc-img {
-  width: 7.5rem;
-  height: 7.5rem;
-}
-.profile-card .pc-about {
-  flex-grow: 1;
-  padding: 10px;
-}
-.profile-card .pc-interests {
-  flex-grow: 2;
-}
-
 .ko-color-blocks {
   margin: 0;
 }

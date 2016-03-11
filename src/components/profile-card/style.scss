@@ -1,0 +1,19 @@
+:local {
+  .profileCard {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    margin-top: 15px;
+  }
+  .profileImage {
+    width: 7.5rem;
+    height: 7.5rem;
+  }
+  .profileAbout {
+    flex-grow: 1;
+    padding: 10px;
+  }
+  .profileInterests {
+    flex-grow: 2;
+  }
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import url from 'url';
-import Layout from './layout';
+import Layout from '../components/layout';
 
 function getUserID() {
   var u = url.parse(window.location.href);

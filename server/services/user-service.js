@@ -30,7 +30,7 @@ class UserService {
 
   static createUser(userInfo, callback) {
     // check if a user exists with the specified email, and if so, return that document
-    UserCollection.getUser({ email: userInfo.email }, (err, user) => {
+    UserCollection.getUser({ email: (userInfo.email || '') }, (err, user) => {
       if (user) {
         callback(err, user);
         return;
@@ -88,6 +88,10 @@ class UserService {
   }
 
   static _createAllInterests(interests, callback) {
+    if (!interests) {
+      interests = [];
+    }
+
     const trimmedInterests = interests.map(interest => {
       const newInterest = {
         name: interest.name,
